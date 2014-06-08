@@ -6,9 +6,10 @@ Maintainer Matt Klich, Mike Risse
 
 RUN apt-get update; \
   DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install --yes \
-    git build-essential python-dev python-pip python-numpy python-scipy \
-    python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose; \
-  pip install ipython[notebook]
+    git wget build-essential python-dev ipython ipython-notebook python-pip \
+    python-numpy python-scipy python-matplotlib python-pandas python-sympy \
+    python-nose python-sklearn libsndfile-dev; \
+  pip install scikits.audiolab
 
 ADD ./notebook/ /tmp/notebook/
 
