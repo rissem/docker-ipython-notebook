@@ -14,5 +14,6 @@ RUN apt-get update; \
 ADD ./notebook/ /tmp/notebook/
 
 EXPOSE 8080
-CMD ipython notebook --no-browser --ip=0.0.0.0 --port=8080 --notebook-dir=/tmp/notebook/
+ADD ./run.sh /run.sh
+CMD /run.sh
 
